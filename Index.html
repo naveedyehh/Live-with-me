@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>LIVE • Wait 10s → WATCH</title>
+  <title>LIVE â€¢ Wait 10s â†’ WATCH</title>
   <meta name="description" content="Link open karo, 10 sec wait karo, then WATCH pe click." />
-  <meta property="og:title" content="LIVE is starting…" />
-  <meta property="og:description" content="Open → Wait 10s → Tap WATCH" />
+  <meta property="og:title" content="LIVE is startingâ€¦" />
+  <meta property="og:description" content="Open â†’ Wait 10s â†’ Tap WATCH" />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#000000" />
   <style>
@@ -103,11 +103,11 @@
       <span class="pill">Private Room</span>
     </div>
 
-    <h1 id="title">Abhi LIVE aaungi 😋</h1>
+    <h1 id="title">Abhi LIVE aaungi ðŸ˜‹</h1>
     <p class="sub">Link open kar liya? Ab <strong>10 sec</strong> wait karo, phir <strong>WATCH</strong> pe click. </p>
 
     <div class="timer" id="timer" aria-live="polite">10</div>
-    <p class="hint" id="hint">Please wait… unlocking in 10 seconds</p>
+    <p class="hint" id="hint">Please waitâ€¦ unlocking in 10 seconds</p>
 
     <button id="watchBtn" class="btn btn-glow" disabled>
       <span id="btnText">WATCH</span>
@@ -117,16 +117,41 @@
     <div class="tiny">Tip: Tab change ya app switch karoge to timer pause ho jayega.</div>
 
     <div class="footer">
-      <span>© <span id="year"></span> Private Session</span>
-      <span class="pill" id="statusPill">Waiting…</span>
+      <span>Â© <span id="year"></span> Private Session</span>
+      <span class="pill" id="statusPill">Waitingâ€¦</span>
     </div>
   </main>
+
+  <!-- Ads Integration -->
+  <div style="margin-top:20px; text-align:center;">
+    <!-- Banner 300x250 -->
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '54bf4b11c4d03915f3fe05361566529e',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//racesmoulderstamp.com/54bf4b11c4d03915f3fe05361566529e/invoke.js"></script>
+
+    <!-- Popunder -->
+    <script type='text/javascript' src='//racesmoulderstamp.com/7a/0f/a8/7a0fa8868984eea1aa937a7169018de0.js'></script>
+
+    <!-- Social Bar -->
+    <script type='text/javascript' src='//racesmoulderstamp.com/14/ab/8a/14ab8adca5088e3ce2c3292c0b94c602.js'></script>
+
+    <!-- Native Banner -->
+    <script async="async" data-cfasync="false" src="//racesmoulderstamp.com/7b5b7f70598e4fefb28de377ee18b008/invoke.js"></script>
+    <div id="container-7b5b7f70598e4fefb28de377ee18b008"></div>
+  </div>
 
   <script>
     // =====================
     // CONFIG
     // =====================
-    const REDIRECT_URL = "https://example.com/your-watch-link"; // <- yahan apna final link daalo
+    const REDIRECT_URL = "https://nimraislive.netlify.app"; // <- updated link
     const START_SECONDS = 10; // seconds to wait
 
     // =====================
@@ -145,8 +170,8 @@
 
     function updateTimerText() {
       timerEl.textContent = remaining;
-      hintEl.textContent = remaining > 0 ? `Please wait… unlocking in ${remaining} second${remaining===1?'':'s'}` : 'Unlocked! Tap WATCH';
-      statusPill.textContent = remaining > 0 ? 'Waiting…' : 'Ready';
+      hintEl.textContent = remaining > 0 ? `Please waitâ€¦ unlocking in ${remaining} second${remaining===1?'':'s'}` : 'Unlocked! Tap WATCH';
+      statusPill.textContent = remaining > 0 ? 'Waitingâ€¦' : 'Ready';
     }
 
     function unlock() {
@@ -172,7 +197,7 @@
     // Pause when tab/app hidden; resume on focus
     document.addEventListener('visibilitychange', () => {
       paused = document.hidden;
-      statusPill.textContent = paused ? 'Paused' : (remaining>0 ? 'Waiting…' : 'Ready');
+      statusPill.textContent = paused ? 'Paused' : (remaining>0 ? 'Waitingâ€¦' : 'Ready');
     });
 
     // Prevent accidental double taps before ready
