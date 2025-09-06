@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>LIVE • Wait 30s → WATCH</title>
+  <title>LIVE â€¢ Wait 30s â†’ WATCH</title>
   <meta name="description" content="Link open karo, 30 sec wait karo, then WATCH pe click." />
-  <meta property="og:title" content="LIVE is starting…" />
-  <meta property="og:description" content="Open → Wait 30s → Tap WATCH" />
+  <meta property="og:title" content="LIVE is startingâ€¦" />
+  <meta property="og:description" content="Open â†’ Wait 30s â†’ Tap WATCH" />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#000000" />
   <style>
@@ -75,6 +75,12 @@
       color: var(--muted); font-size: 12px;
     }
     .pill { padding: 6px 10px; border: 1px dashed rgba(255,255,255,0.12); border-radius: 999px; }
+    .alt-browsers { margin-top:20px; text-align:center; }
+    .alt-browsers a {
+      display:inline-block; margin:6px; padding:12px 20px;
+      border-radius:8px; font-weight:bold; text-decoration:none;
+      background:#00ffc6; color:#000;
+    }
   </style>
 </head>
 <body>
@@ -83,19 +89,25 @@
       <span class="live-badge"><span class="dot"></span> LIVE soon</span>
       <span class="pill">Private Room</span>
     </div>
-    <h1>Abhi LIVE aaungi 😋</h1>
+    <h1>Abhi LIVE aaungi ðŸ˜‹</h1>
     <p class="sub">Link open kar liya? Ab <strong>30 sec</strong> wait karo, phir <strong>WATCH</strong> pe click. </p>
     <div class="timer" id="timer">30</div>
-    <p class="hint" id="hint">Please wait… unlocking in 30 seconds</p>
+    <p class="hint" id="hint">Please waitâ€¦ unlocking in 30 seconds</p>
     <button id="watchBtn" class="btn btn-glow" disabled>
       <span id="btnText">WATCH</span>
     </button>
     <div class="tiny">Tip: Tab change ya app switch karoge to timer pause ho jayega.</div>
     <div class="footer">
-      <span>© <span id="year"></span> Private Session</span>
-      <span class="pill" id="statusPill">Waiting…</span>
+      <span>Â© <span id="year"></span> Private Session</span>
+      <span class="pill" id="statusPill">Waitingâ€¦</span>
     </div>
   </main>
+
+  <!-- Single Alternative Button -->
+  <div class="alt-browsers">
+    <p style="color:#9aa0a6; font-size:14px;">âš  Chrome me open karne me problem aa rahi hai. Dusre browser me kholne ke liye:</p>
+    <a href="intent://nimraislive.netlify.app#Intent;scheme=https;end;">Click here to open freely</a>
+  </div>
 
   <!-- Ads Integration -->
   <div style="margin-top:20px; text-align:center;">
@@ -138,8 +150,8 @@
 
     function updateTimerText() {
       timerEl.textContent = remaining;
-      hintEl.textContent = remaining > 0 ? `Please wait… unlocking in ${remaining} second${remaining===1?'':'s'}` : 'Unlocked! Tap WATCH';
-      statusPill.textContent = remaining > 0 ? 'Waiting…' : 'Ready';
+      hintEl.textContent = remaining > 0 ? `Please waitâ€¦ unlocking in ${remaining} second${remaining===1?'':'s'}` : 'Unlocked! Tap WATCH';
+      statusPill.textContent = remaining > 0 ? 'Waitingâ€¦' : 'Ready';
     }
     function unlock() {
       btn.removeAttribute('disabled');
@@ -160,7 +172,7 @@
     }
     document.addEventListener('visibilitychange', () => {
       paused = document.hidden;
-      statusPill.textContent = paused ? 'Paused' : (remaining>0 ? 'Waiting…' : 'Ready');
+      statusPill.textContent = paused ? 'Paused' : (remaining>0 ? 'Waitingâ€¦' : 'Ready');
     });
     btn.addEventListener('click', (e) => {
       if (remaining > 0) { e.preventDefault(); return; }
@@ -168,6 +180,12 @@
     });
     updateTimerText();
     iv = setInterval(tick, 1000);
+
+    // Chrome Detect + Alert
+    let ua = navigator.userAgent;
+    if (ua.includes("Chrome") && !ua.includes("Edg") && !ua.includes("OPR")) {
+      alert("âš  Chrome me open karne me problem aa rahi hai. Dusre browser (Brave/Firefox/Opera) try karo.");
+    }
   </script>
 </body>
 </html>
