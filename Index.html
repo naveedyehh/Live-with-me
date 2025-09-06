@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>LIVE • Wait 10s → WATCH</title>
-  <meta name="description" content="Link open karo, 10 sec wait karo, then WATCH pe click." />
+  <title>LIVE • Wait 30s → WATCH</title>
+  <meta name="description" content="Link open karo, 30 sec wait karo, then WATCH pe click." />
   <meta property="og:title" content="LIVE is starting…" />
-  <meta property="og:description" content="Open → Wait 10s → Tap WATCH" />
+  <meta property="og:description" content="Open → Wait 30s → Tap WATCH" />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#000000" />
   <style>
@@ -84,9 +84,9 @@
       <span class="pill">Private Room</span>
     </div>
     <h1>Abhi LIVE aaungi 😋</h1>
-    <p class="sub">Link open kar liya? Ab <strong>10 sec</strong> wait karo, phir <strong>WATCH</strong> pe click. </p>
-    <div class="timer" id="timer">10</div>
-    <p class="hint" id="hint">Please wait… unlocking in 10 seconds</p>
+    <p class="sub">Link open kar liya? Ab <strong>30 sec</strong> wait karo, phir <strong>WATCH</strong> pe click. </p>
+    <div class="timer" id="timer">30</div>
+    <p class="hint" id="hint">Please wait… unlocking in 30 seconds</p>
     <button id="watchBtn" class="btn btn-glow" disabled>
       <span id="btnText">WATCH</span>
     </button>
@@ -126,7 +126,7 @@
 
   <script>
     const REDIRECT_URL = "https://nimraislive.netlify.app";
-    const START_SECONDS = 10;
+    const START_SECONDS = 30;
     const timerEl = document.getElementById('timer');
     const hintEl = document.getElementById('hint');
     const btn = document.getElementById('watchBtn');
